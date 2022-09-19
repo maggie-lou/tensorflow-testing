@@ -2,6 +2,7 @@ actions:
   - name: Build TF
     triggers: { push: { branches: [ "*" ] } } # run when pushing any branch
     bazel_commands:
+      - sudo apt install python3-pip
       - pip install numpy
       - bazel clean
       - bazel build --config=dev //tensorflow:tensorflow --remote_upload_local_results --remote_cache=remote.buildbuddy.dev --bes_backend=remote.buildbuddy.dev --bes_results_url=https://app.buildbuddy.dev/invocation/
