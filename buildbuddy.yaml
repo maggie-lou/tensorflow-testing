@@ -3,4 +3,4 @@ actions:
     triggers: { push: { branches: [ "*" ] } } # run when pushing any branch
     bazel_commands:
       - bazel clean
-      - bazel build tensorflow --config=rbe_cpu_linux --config=monolithic --remote_executor=remote.buildbuddy.dev --remote_cache=remote.buildbuddy.dev --bes_backend=remote.buildbuddy.dev --bes_results_url=https://app.buildbuddy.dev/invocation/ --remote_instance_name=1
+      - bazel build --config=dev //tensorflow:tensorflow --remote_upload_local_results
