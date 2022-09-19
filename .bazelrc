@@ -1,3 +1,8 @@
+# Build with --config=dev to send build logs to the dev server
+build:dev --bes_results_url=https://app.buildbuddy.dev/invocation/
+build:dev --bes_backend=grpcs://remote.buildbuddy.dev
+build:dev --remote_cache=grpcs://remote.buildbuddy.dev
+
 # TensorFlow Bazel configuration file.
 # This file tries to group and simplify build options for TensorFlow
 #
